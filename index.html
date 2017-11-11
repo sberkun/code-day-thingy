@@ -6,12 +6,26 @@
       margin: 0;
       overflow: hidden;
     }
+    #outermost-container{
+      background-image: url("https://vignette.wikia.nocookie.net/cookieclicker/images/b/b9/BgBlue.jpg/revision/latest?cb=20130901230119");
+      height: 100%; 
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
     .canvas-box{height:0px;}
-    #left{float: left;width: 33%;}
-    #middle{display: inline-block;width: 34%;}
-    #right{float: right;width: 33%;}
+    #left{
+      float: left;width: 33%;
+    }
+    #middle{
+      display: inline-block;width: 34%;
+    }
+    #right{
+      float: right;width: 33%;
+    }
   </style></head>
   <body>
+    <div id="outermost-container">
     <div class="canvas-box"><canvas id="myCanvas"></canvas></div>
     <div id="left">
       
@@ -29,6 +43,7 @@
       hiiiiiiiiiiiiiiiiiiiiiiii
     </div>
     <p id="score"></p>
+    </div>
     <script src="content.js"></script>
   </body>
 </html>
