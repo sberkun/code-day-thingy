@@ -71,13 +71,13 @@
   for(var ch=0; ch < 15; ch++){
     document.getElementById("buildings1").children[ch].addEventListener("click",function(){
       ccc("1");
-      if(allcoords.score1>buildingCosts[ch]){ccc("3");mycoords.u=0-ch-1;}
+      if(allcoords.score1>=buildingCosts[ch]){mycoords.u=0-ch-1;}
+      else{ccc(buildingCosts[ch]);}
     });
   }
   for(var ch=0; ch < 15; ch++){
     document.getElementById("buildings2").children[ch].addEventListener("click",function(){
-      ccc("2");
-      if(allcoords.score2>buildingCosts[ch]){ccc("4");mycoords.u=ch+1;}
+      if(allcoords.score2>=buildingCosts[ch]){mycoords.u=ch+1;}
     });
   }
 
