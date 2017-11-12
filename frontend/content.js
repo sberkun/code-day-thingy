@@ -67,15 +67,15 @@
     mycoords.b++;
     mycoords.c++;
   });
-  for(var ch in document.getElementById("buildings1").children){
-    ccc(ch);
+  var buildingCosts = [15,97,1057,11528,124878,1344835,19211921,316996684,4899039651,72044700750,960596010000,13448344140000,163301321700000,2017251621000000,24975496259999996];
+  for(var ch=0; ch < document.getElementById("buildings1").children.length; ch++){
     document.getElementById("buildings1").children[ch].addEventListener("click",function(){
-      mycoords.u=0-ch;
+      if(allcoords.score1>buildingCosts[ch])mycoords.u=0-ch;
     });
   }
-  for(var ch in document.getElementById("buildings2").children){
+  for(var ch=0; ch < document.getElementById("buildings2").children.length; ch++){
     document.getElementById("buildings1").children[ch].addEventListener("click",function(){
-      mycoords.u=ch;
+      if(allcoords.score2>buildingCosts[ch])mycoords.u=ch;
     });
   }
 
