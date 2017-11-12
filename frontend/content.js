@@ -67,6 +67,12 @@
     mycoords.b++;
     mycoords.c++;
   });
+  form1.onsubmit = function(e){
+    e.preventDefault();
+    mycoords.name = form1.value1.value;
+    form1.value1.value = '';
+    return false;
+  };
   ws.onmessage = function(event){
     allcoords = JSON.parse(event.data.toString());
   };  
