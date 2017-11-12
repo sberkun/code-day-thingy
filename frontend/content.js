@@ -52,7 +52,7 @@
 
   
 
-  var mycoords = {a:0,b:0,c:0,x:0,y:0,name:"Random potato"};
+  var mycoords = {a:0,b:0,c:0,x:0,y:0,name:"Random potato",u:0};
   var allcoords = {};
   var interval;
   document.addEventListener('mousemove',function(mouseE){
@@ -66,6 +66,12 @@
   document.getElementById("thecookie2").addEventListener("click", function(){
     mycoords.b++;
     mycoords.c++;
+  });
+  document.getElementById("buildings1").children[0].addEventListener("click", function(){
+    
+  });
+  document.getElementById("buildings1").children[0].addEventListener("click", function(){
+    
   });
   form1.onsubmit = function(e){
     e.preventDefault();
