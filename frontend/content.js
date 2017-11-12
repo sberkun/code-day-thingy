@@ -1,6 +1,5 @@
   const HOST = location.origin.replace(/^http/, 'ws');
   const ws = new WebSocket(HOST);
-    ws.binaryType = 'arraybuffer';
   var bForCCC=true;const ccc = function(mmm){if(bForCCC) bForCCC=confirm(mmm);};
 
   
@@ -52,33 +51,44 @@
 
 
   
-  var mycoordsBuffer = new ArrayBuffer(2*4);//length 2
-    var mycoords = new Float32Array(mycoordsBuffer);
-    mycoords[0] = 0;
-    mycoords[1] = 0;
-  var allcoords = [];
+
+  var mycoords = {a:0,b:0,x:0,y:0};
+  var allcoords = {};
   var interval;
   document.addEventListener('mousemove',function(mouseE){
-    mycoords[0] = mouseE.clientX;
-    mycoords[1] = mouseE.clientY;
-    document.getElementById("score").innerHTML = "x: "+mycoords[0]+" y:"+mycoords[1];
+    mycoords.x = mouseE.clientX;
+    mycoords.y = mouseE.clientY;
+    document.getElementById("score").innerHTML = "x: "+mycoords.x+" y:"+mycoords.y;
+  });
+  document.getElementById("thecookie1").addEventListener("click", function(){
+    mycoords.a++;
+  });
+  document.getElementById("thecookie2").addEventListener("click", function(){
+    mycoords.b++;
   });
   ws.onmessage = function(event){
-    allcoords = new Float32Array(event.data);
+    allcoords = JSON.parse(event.data.toString());
   };  
   ws.onclose = function(event){
     window.clearInterval(interval);
   }
   function drawScene(){
     DRAW.clearRect(0,0,myCanvas.width,myCanvas.height);
-    for(var a=0;a<allcoords.length;a+=3){
-      rect(allcoords[a+1]-5,allcoords[a+2]-5,10,10);
+    for(var pp in allcoords.ppl){
+      var sizeCursor = 5+allcoords.ppl[pp]['a']+allcoords.ppl[pp]['b'];
+      rect(allcoords.ppl[pp]['x']-sizeCursor,allcoords.ppl[pp]['y']-sizeCursor,sizeCursor*2,sizeCursor*2);
     }
+    numcookiesbank1.innerHTML = allcoords.score1;
+    numcookiesbank2.innerHTML = allcoords.score2;
     window.requestAnimationFrame(drawScene);
   }
   ws.onopen = function(event){
-    interval=window.setInterval(function(){ws.send(mycoordsBuffer);}, 20);
-    window.setTimeout(function(){window.requestAnimationFrame(drawScene);}, 200);
+    interval=window.setInterval(function(){
+      ws.send(JSON.stringify(mycoords));
+      mycoords.a = 0;
+      mycoords.b = 0;
+    }, 20);
+    window.requestAnimationFrame(drawScene);
   }
 
 
