@@ -1,15 +1,16 @@
 module.exports.exportFunction = function(peoples){
   return function(){
-    var pplleenn = Object.keys(peoples).length;
-    var infoBuffer = new ArrayBuffer(pplleenn*12);
-    var info = new Float32Array(infoBuffer);
-    var a=0; for(var p in peoples){
-      info[a++] = peoples[p].ws.id;
-      info[a++] = peoples[p].x;
-      info[a++] = peoples[p].y;
+
+    var sendOBJ = {score1:0,score2:0,ppl:peoples};
+    
+    for(var aa in peoples){
+      sendOBJ.score1+=peoples[aa]['a'];
+      sendOBJ.score2+=peoples[aa]['b'];
     }
-    for(var p in peoples){
-      peoples[p].ws.send(infoBuffer);
-    }
+    
+    wss.clients.forEach((client) => {
+      client.send(JSON.stringify(sendOBJ));
+    });
+    
   };
 };
