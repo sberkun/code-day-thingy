@@ -81,6 +81,7 @@
         allcoords.ppl[pp]['x']*window.innerWidth-10,
         allcoords.ppl[pp]['y']*window.innerHeight-30
       );*/
+      DRAW.fillText("HI",30,30);
       rect(
         allcoords.ppl[pp]['x']*window.innerWidth-10,
         allcoords.ppl[pp]['y']*window.innerHeight-10,
