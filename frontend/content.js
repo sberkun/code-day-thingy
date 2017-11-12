@@ -139,6 +139,7 @@
       ws.send(JSON.stringify(mycoords));
       mycoords.a = 0;
       mycoords.b = 0;
+      mycoords.u = 0;
     }, 20);
     window.requestAnimationFrame(drawScene);
   }
