@@ -52,7 +52,7 @@
 
   
 
-  var mycoords = {a:0,b:0,x:0,y:0};
+  var mycoords = {a:0,b:0,c:0,x:0,y:0,name:"Random potato"};
   var allcoords = {};
   var interval;
   document.addEventListener('mousemove',function(mouseE){
@@ -61,9 +61,11 @@
   });
   document.getElementById("thecookie1").addEventListener("click", function(){
     mycoords.a++;
+    mycoords.c++;
   });
   document.getElementById("thecookie2").addEventListener("click", function(){
     mycoords.b++;
+    mycoords.c++;
   });
   ws.onmessage = function(event){
     allcoords = JSON.parse(event.data.toString());
@@ -74,11 +76,15 @@
   function drawScene(){
     DRAW.clearRect(0,0,myCanvas.width,myCanvas.height);
     for(var pp in allcoords.ppl){
-      var sizeCursor = 5+allcoords.ppl[pp]['a']+allcoords.ppl[pp]['b'];
+      DRAW.fillText(
+        allcords.ppl[pp]['name']+": "+allcords.ppl[pp]['c'],
+        allcoords.ppl[pp]['x']*window.innerWidth-10,
+        allcoords.ppl[pp]['y']*window.innerHeight-30
+      );
       rect(
-        allcoords.ppl[pp]['x']*window.innerWidth-sizeCursor,
-        allcoords.ppl[pp]['y']*window.innerHeight-sizeCursor,
-        sizeCursor*2,sizeCursor*2
+        allcoords.ppl[pp]['x']*window.innerWidth-10,
+        allcoords.ppl[pp]['y']*window.innerHeight-10,
+        20,20
       );
     }
     numcookiesbank1.innerHTML = allcoords.score1;
