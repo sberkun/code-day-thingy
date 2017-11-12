@@ -18,8 +18,6 @@ var buildingCosts = [15,97,1057,11528,124878,1344835,19211921,316996684,48990396
 var sendOBJ = {
   score1:0,score2:0,cps1:0,cps2:0,
   ppl:peoples,
-  u1:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  u2:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 };
 var actualscore1 = 0;
 var actualscore2 = 0;
