@@ -25,12 +25,14 @@
     }
     #right{
       float:right;width:calc(33% - 10px);height:100%;
+      text-align: center;
       border-left: 10px ridge #cc6600;
     }
-    #numcookies-div{
+    .numcookies-div{
       background-color: rgba(0, 0, 0, 0.5);
       white-space:nowrap;
     }
+    
     #chatbox{
       height:calc(100% - 140px);
       background-color: rgba(0,0,0,0.7);
@@ -39,16 +41,6 @@
   <body>
     <div id="outermost-container">
     <div class="canvas-box"><canvas id="myCanvas"></canvas></div>
-    <div id="left">
-      
-        <h2>Multiplayer Cookie Clicker<h1>
-        <div id="numcookies-div">  
-          <h1 style="height:30px;"><span id="numcookiesbank">164323</span> cookies</h1>
-          <h6><span id="numcookiespsec">123456</span> cookies per second</h6>
-        </div>
-        <img id="thecookie" src="https://vignette.wikia.nocookie.net/cookieclicker/images/5/5a/PerfectCookie.png/revision/latest/scale-to-width-down/250?cb=20130827014912"></img>
-        
-    </div>  
     <div id="middle">
       
       
@@ -56,6 +48,7 @@
           <h6 id="newsbox">You feel like making cookies. But nobody wants to eat your cookies.</h6>         
         </div>
         <div id="chatbox">
+          <p id="score"></p>
         </div>
         <div style = "border-top: 10px ridge #cc6600;height:30px">
           <form id="form1">
@@ -66,9 +59,25 @@
       
       
     </div>
+    <div id="left">
+      
+        <h2>Multiplayer Cookie Clicker<h1>
+        <div class="numcookies-div">  
+          <h1 style="height:30px;"><span id="numcookiesbank1">164323</span> cookies</h1>
+          <h6><span id="numcookiespsec1">123456</span> cookies per second</h6>
+        </div>
+        <img id="thecookie1" src="https://vignette.wikia.nocookie.net/cookieclicker/images/5/5a/PerfectCookie.png/revision/latest/scale-to-width-down/250?cb=20130827014912"></img>
+        
+    </div>  
     <div id="right">
-      hiiiiiiiiiiiiiiiiiiiiiiii
-      <p id="score"></p>
+      
+        <h2>Multiplayer Cookie Clicker<h1>
+        <div class="numcookies-div">  
+          <h1 style="height:30px;"><span id="numcookiesbank2">164323</span> cookies</h1>
+          <h6><span id="numcookiespsec2">123456</span> cookies per second</h6>
+        </div>
+        <img id="thecookie2" src="https://vignette.wikia.nocookie.net/cookieclicker/images/5/5a/PerfectCookie.png/revision/latest/scale-to-width-down/250?cb=20130827014912"></img>
+      
     </div>
     </div>
     <script src="content.js"></script>
