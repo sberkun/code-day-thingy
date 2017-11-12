@@ -68,18 +68,39 @@
     mycoords.c++;
   });
   var buildingCosts = [15,97,1057,11528,124878,1344835,19211921,316996684,4899039651,72044700750,960596010000,13448344140000,163301321700000,2017251621000000,24975496259999996];
-  for(var ch=0; ch < 15; ch++){
-    var a1a = ch;
-    document.getElementById("buildings1").children[a1a].addEventListener("click",function(){
-      mycoords.u=0-a1a-1;
-    });
-  }
-  for(var ch=0; ch < 15; ch++){
-    var a1a = ch;
-    document.getElementById("buildings2").children[a1a].addEventListener("click",function(){
-      mycoords.u=a1a+1;
-    });
-  }
+  
+  document.getElementById("buildings1").children[0].addEventListener("click",function(){mycoords.u= -1;});
+  document.getElementById("buildings1").children[1].addEventListener("click",function(){mycoords.u= -2;});
+  document.getElementById("buildings1").children[2].addEventListener("click",function(){mycoords.u= -3;});
+  document.getElementById("buildings1").children[3].addEventListener("click",function(){mycoords.u= -4;});
+  document.getElementById("buildings1").children[4].addEventListener("click",function(){mycoords.u= -5;});
+  document.getElementById("buildings1").children[5].addEventListener("click",function(){mycoords.u= -6;});
+  document.getElementById("buildings1").children[6].addEventListener("click",function(){mycoords.u= -7;});
+  document.getElementById("buildings1").children[7].addEventListener("click",function(){mycoords.u= -8;});
+  document.getElementById("buildings1").children[8].addEventListener("click",function(){mycoords.u= -9;});
+  document.getElementById("buildings1").children[9].addEventListener("click",function(){mycoords.u= -10;});
+  document.getElementById("buildings1").children[10].addEventListener("click",function(){mycoords.u= -11;});
+  document.getElementById("buildings1").children[11].addEventListener("click",function(){mycoords.u= -12;});
+  document.getElementById("buildings1").children[12].addEventListener("click",function(){mycoords.u= -13;});
+  document.getElementById("buildings1").children[13].addEventListener("click",function(){mycoords.u= -14;});
+  document.getElementById("buildings1").children[14].addEventListener("click",function(){mycoords.u= -15;});
+
+  document.getElementById("buildings2").children[0].addEventListener("click",function(){mycoords.u= 1;});
+  document.getElementById("buildings2").children[1].addEventListener("click",function(){mycoords.u= 2;});
+  document.getElementById("buildings2").children[2].addEventListener("click",function(){mycoords.u= 3;});
+  document.getElementById("buildings2").children[3].addEventListener("click",function(){mycoords.u= 4;});
+  document.getElementById("buildings2").children[4].addEventListener("click",function(){mycoords.u= 5;});
+  document.getElementById("buildings2").children[5].addEventListener("click",function(){mycoords.u= 6;});
+  document.getElementById("buildings2").children[6].addEventListener("click",function(){mycoords.u= 7;});
+  document.getElementById("buildings2").children[7].addEventListener("click",function(){mycoords.u= 8;});
+  document.getElementById("buildings2").children[8].addEventListener("click",function(){mycoords.u= 9;});
+  document.getElementById("buildings2").children[9].addEventListener("click",function(){mycoords.u= 10;});
+  document.getElementById("buildings2").children[10].addEventListener("click",function(){mycoords.u= 11;});
+  document.getElementById("buildings2").children[11].addEventListener("click",function(){mycoords.u= 12;});
+  document.getElementById("buildings2").children[12].addEventListener("click",function(){mycoords.u= 13;});
+  document.getElementById("buildings2").children[13].addEventListener("click",function(){mycoords.u= 14;});
+  document.getElementById("buildings2").children[14].addEventListener("click",function(){mycoords.u= 15;});
+
 
   form1.onsubmit = function(e){
     e.preventDefault();
