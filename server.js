@@ -14,7 +14,7 @@ const server = express()
 
 const wss = new SocketServer({ server });
 const peoples = {};
-
+var sendOBJ = {score1:0,score2:0,ppl:peoples};
 wss.on('connection', (ws) => {
   ws.id = Math.random();
   peoples[ws.id] = {a:0,b:0,x:0,y:0};
@@ -24,9 +24,7 @@ wss.on('connection', (ws) => {
   ws.on('close', ()=> delete peoples[ws.id]);
 });
 
-setInterval(function(){
-    var sendOBJ = {score1:0,score2:0,ppl:peoples};
-    
+setInterval(function(){    
     for(var aa in peoples){
       sendOBJ.score1+=peoples[aa]['a'];
       sendOBJ.score2+=peoples[aa]['b'];
