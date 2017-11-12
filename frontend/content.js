@@ -67,12 +67,18 @@
     mycoords.b++;
     mycoords.c++;
   });
-  document.getElementById("buildings1").children[0].addEventListener("click", function(){
-    
-  });
-  document.getElementById("buildings1").children[0].addEventListener("click", function(){
-    
-  });
+  for(var ch in document.getElementById("buildings1").children){
+    ccc(ch);
+    document.getElementById("buildings1").children[ch].addEventListener("click",function(){
+      mycoords.u=0-ch;
+    });
+  }
+  for(var ch in document.getElementById("buildings2").children){
+    document.getElementById("buildings1").children[ch].addEventListener("click",function(){
+      mycoords.u=ch;
+    });
+  }
+
   form1.onsubmit = function(e){
     e.preventDefault();
     mycoords.name = form1.value1.value;
