@@ -19,10 +19,9 @@ const peoples = {};
 
 wss.on('connection', (ws) => {
   ws.id = Math.random();
-  peoples[ws.id] = 7;//new person(ws);
+  peoples[ws.id] = {a:0,b:0,x:0,y:0};
   ws.on('message',(message) => {
-    console.log(message);
-    //peoples[ws.id].update(message.data);
+    peoples[ws.id] = JSON.parse(message);
   });
   ws.on('close', ()=> delete peoples[ws.id]);
 });
