@@ -21,15 +21,19 @@
       border-right: 10px ridge #cc6600;
     }
     #middle{
-      display:inline-block;width:34%;
+      display:inline-block;width:34%;height:100%;
     }
     #right{
-      float:right;width:calc(33% - 10px);
+      float:right;width:calc(33% - 10px);height:100%;
       border-left: 10px ridge #cc6600;
     }
     #numcookies-div{
       background-color: rgba(0, 0, 0, 0.5);
       white-space:nowrap;
+    }
+    #chatbox{
+      height:calc(100% - 140px);
+      background-color: rgba(0,0,0,0.7);
     }
   </style></head>
   <body>
@@ -46,10 +50,21 @@
         
     </div>  
     <div id="middle">
-      seiofwoeifwoefij
-        <div style = "border-bottom: thick ridge #cc6600;">
+      
+      
+        <div style = "border-bottom: 10px ridge #cc6600;text-align:center;height:30px">
           <h6 id="newsbox">You feel like making cookies. But nobody wants to eat your cookies.</h6>         
         </div>
+        <div id="chatbox">
+        </div>
+        <div style = "border-top: 10px ridge #cc6600;height:30px">
+          <form id="form1">
+            <input type="text" name="value1" placeholder="rite stuf">
+            <input type="submit" value="Submit">
+          </form> 
+        </div>
+      
+      
     </div>
     <div id="right">
       hiiiiiiiiiiiiiiiiiiiiiiii
