@@ -56,17 +56,13 @@
   var allcoords = {};
   var interval;
   document.addEventListener('mousemove',function(mouseE){
-    mycoords.x = mouseE.clientX;
+    mycoords.x = mouseE.clientX/window.innerWidth;
     mycoords.y = mouseE.clientY;
     document.getElementById("score").innerHTML = "x: "+mycoords.x+" y:"+mycoords.y;
   });
-  document.getElementById("thecookie1").addEventListener("click", function(){
-    ccc("wef");
-    mycoords.a++;
-  });
-  document.getElementById("thecookie2").addEventListener("click", function(){
-    ccc("efe");
-    mycoords.b++;
+  document.addEventListener("click", function(){
+    if(mycoords.x<0.5) mycoords.a++;
+    else mycoords.b++;
   });
   ws.onmessage = function(event){
     allcoords = JSON.parse(event.data.toString());
@@ -78,7 +74,7 @@
     DRAW.clearRect(0,0,myCanvas.width,myCanvas.height);
     for(var pp in allcoords.ppl){
       var sizeCursor = 5+allcoords.ppl[pp]['a']+allcoords.ppl[pp]['b'];
-      rect(allcoords.ppl[pp]['x']-sizeCursor,allcoords.ppl[pp]['y']-sizeCursor,sizeCursor*2,sizeCursor*2);
+      rect(allcoords.ppl[pp]['x']*window.innerWidth-sizeCursor,allcoords.ppl[pp]['y']-sizeCursor,sizeCursor*2,sizeCursor*2);
     }
     numcookiesbank1.innerHTML = allcoords.score1;
     numcookiesbank2.innerHTML = allcoords.score2;
