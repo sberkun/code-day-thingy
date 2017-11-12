@@ -14,8 +14,7 @@ const server = express()
 
 const wss = new SocketServer({ server });
 const peoples = {};
-//const updateGame = require('./backend/game.js').exportFunction(peoples);
-//const person = require('./backend/player.js').exportFunction;
+const updateGame = require('./backend/game.js').exportFunction(peoples);
 
 wss.on('connection', (ws) => {
   ws.id = Math.random();
@@ -26,4 +25,4 @@ wss.on('connection', (ws) => {
   ws.on('close', ()=> delete peoples[ws.id]);
 });
 
-//setInterval(updateGame, 20);
+setInterval(updateGame, 20);
