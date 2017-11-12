@@ -95,6 +95,8 @@
     }
     numcookiesbank1.innerHTML = allcoords.score1;
     numcookiesbank2.innerHTML = allcoords.score2;
+    numcookiespsec1.innerHTML = allcoords.cps1;
+    numcookiespsec2.innerHTML = allcoords.cps2;
     window.requestAnimationFrame(drawScene);
   }
   ws.onopen = function(event){
