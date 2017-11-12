@@ -14,16 +14,17 @@ const server = express()
 
 const wss = new SocketServer({ server });
 const peoples = {};
-const updateGame = require('./backend/game.js').exportFunction(peoples);
-const person = require('./backend/player.js').exportFunction;
+//const updateGame = require('./backend/game.js').exportFunction(peoples);
+//const person = require('./backend/player.js').exportFunction;
 
 wss.on('connection', (ws) => {
   ws.id = Math.random();
-  peoples[ws.id] = new person(ws);
+  peoples[ws.id] = 7;//new person(ws);
   ws.on('message',(message) => {
-    peoples[ws.id].update(message.readFloatLE(0),message.readFloatLE(4));
+    console.log(message);
+    //peoples[ws.id].update(message.data);
   });
   ws.on('close', ()=> delete peoples[ws.id]);
 });
 
-setInterval(updateGame, 20);
+//setInterval(updateGame, 20);
