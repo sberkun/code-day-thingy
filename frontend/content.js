@@ -59,9 +59,11 @@
     mycoords.x = mouseE.clientX/window.innerWidth;
     mycoords.y = mouseE.clientY/window.innerHeight;
   });
-  document.addEventListener("click", function(){
-    if(mycoords.x<0.5) mycoords.a++;
-    else mycoords.b++;
+  document.getElementById("thecookie1").addEventListener("click", function(){
+    mycoords.a++;
+  });
+  document.getElementById("thecookie2").addEventListener("click", function(){
+    mycoords.b++;
   });
   ws.onmessage = function(event){
     allcoords = JSON.parse(event.data.toString());
