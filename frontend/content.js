@@ -61,9 +61,11 @@
     document.getElementById("score").innerHTML = "x: "+mycoords.x+" y:"+mycoords.y;
   });
   document.getElementById("thecookie1").addEventListener("click", function(){
+    ccc("wef");
     mycoords.a++;
   });
   document.getElementById("thecookie2").addEventListener("click", function(){
+    ccc("efe");
     mycoords.b++;
   });
   ws.onmessage = function(event){
