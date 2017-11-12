@@ -69,13 +69,15 @@
   });
   var buildingCosts = [15,97,1057,11528,124878,1344835,19211921,316996684,4899039651,72044700750,960596010000,13448344140000,163301321700000,2017251621000000,24975496259999996];
   for(var ch=0; ch < 15; ch++){
-    document.getElementById("buildings1").children[ch].addEventListener("click",function(){
-      mycoords.u=0-ch-1;
+    var a1a = ch;
+    document.getElementById("buildings1").children[a1a].addEventListener("click",function(){
+      mycoords.u=0-a1a-1;
     });
   }
   for(var ch=0; ch < 15; ch++){
-    document.getElementById("buildings2").children[ch].addEventListener("click",function(){
-      mycoords.u=ch+1;
+    var a1a = ch;
+    document.getElementById("buildings2").children[a1a].addEventListener("click",function(){
+      mycoords.u=a1a+1;
     });
   }
 
