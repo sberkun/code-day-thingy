@@ -42,11 +42,11 @@ setInterval(function(){
         var cooost = buildingCosts[Math.abs(peoples[aa]['u'])-1];
         if(peoples[aa]['u']<0&&actualscore1>=cooost){
           actualscore1-=cooost;
-          sendOBJ.cps1+=cooost/100;
+          sendOBJ.cps1+=cooost/150;
         }
         if(peoples[aa]['u']>0&&actualscore2>=cooost){
           actualscore2-=cooost;
-          sendOBJ.cps2+=cooost/100;
+          sendOBJ.cps2+=cooost/150;
         }  
       }
       
