@@ -14,7 +14,7 @@ const server = express()
 
 const wss = new SocketServer({ server });
 const peoples = {};
-var sendOBJ = {score1:0,score2:0,ppl:peoples};
+var sendOBJ = {score1:0,score2:0,cps1:0,cps2:0,ppl:peoples};
 wss.on('connection', (ws) => {
   ws.id = Math.random();
   peoples[ws.id] = {a:0,b:0,x:0,y:0};
