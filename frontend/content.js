@@ -76,11 +76,11 @@
   function drawScene(){
     DRAW.clearRect(0,0,myCanvas.width,myCanvas.height);
     for(var pp in allcoords.ppl){
-      DRAW.fillText(
+      /*DRAW.fillText(
         allcords.ppl[pp]['name']+": "+allcords.ppl[pp]['c'],
         allcoords.ppl[pp]['x']*window.innerWidth-10,
         allcoords.ppl[pp]['y']*window.innerHeight-30
-      );
+      );*/
       rect(
         allcoords.ppl[pp]['x']*window.innerWidth-10,
         allcoords.ppl[pp]['y']*window.innerHeight-10,
